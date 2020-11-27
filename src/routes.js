@@ -24,8 +24,13 @@ const routes = [
       component: SpaceExchange
     },*/
     {
-      path: '/rework',
+      path: '/comingsoon',
       name: 'Coming Soon',
+      component: ReWork
+    },
+    {
+      path: '/rework',
+      name: 'Rework',
       component: ReWork
     },
     /*{
