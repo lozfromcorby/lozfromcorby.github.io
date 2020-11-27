@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from "react-router-dom"
+import {HashRouter} from "react-router-dom"
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,9 +8,9 @@ import reportWebVitals from './reportWebVitals';
 const render = () => {
 
   ReactDOM.render(
-    <BrowserRouter >
+    <HashRouter basename='/'>
       <App />
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById("root")
   )}
 
