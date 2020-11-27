@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/disruptersltd/static/css/main.649a8792.chunk.css",
-    "main.js": "/disruptersltd/static/js/main.f009780b.chunk.js",
-    "main.js.map": "/disruptersltd/static/js/main.f009780b.chunk.js.map",
-    "runtime-main.js": "/disruptersltd/static/js/runtime-main.7403ed62.js",
-    "runtime-main.js.map": "/disruptersltd/static/js/runtime-main.7403ed62.js.map",
-    "static/js/2.d69b634b.chunk.js": "/disruptersltd/static/js/2.d69b634b.chunk.js",
-    "static/js/2.d69b634b.chunk.js.map": "/disruptersltd/static/js/2.d69b634b.chunk.js.map",
-    "static/js/3.c04ec9da.chunk.js": "/disruptersltd/static/js/3.c04ec9da.chunk.js",
-    "static/js/3.c04ec9da.chunk.js.map": "/disruptersltd/static/js/3.c04ec9da.chunk.js.map",
-    "index.html": "/disruptersltd/index.html",
-    "static/css/main.649a8792.chunk.css.map": "/disruptersltd/static/css/main.649a8792.chunk.css.map",
-    "static/js/2.d69b634b.chunk.js.LICENSE.txt": "/disruptersltd/static/js/2.d69b634b.chunk.js.LICENSE.txt",
-    "static/media/loadingcogs.bddee8d8.svg": "/disruptersltd/static/media/loadingcogs.bddee8d8.svg",
-    "static/media/rework.05ad9d02.PNG": "/disruptersltd/static/media/rework.05ad9d02.PNG"
+    "main.css": "/disrupters/static/css/main.649a8792.chunk.css",
+    "main.js": "/disrupters/static/js/main.f009780b.chunk.js",
+    "main.js.map": "/disrupters/static/js/main.f009780b.chunk.js.map",
+    "runtime-main.js": "/disrupters/static/js/runtime-main.cc00b233.js",
+    "runtime-main.js.map": "/disrupters/static/js/runtime-main.cc00b233.js.map",
+    "static/js/2.d69b634b.chunk.js": "/disrupters/static/js/2.d69b634b.chunk.js",
+    "static/js/2.d69b634b.chunk.js.map": "/disrupters/static/js/2.d69b634b.chunk.js.map",
+    "static/js/3.c04ec9da.chunk.js": "/disrupters/static/js/3.c04ec9da.chunk.js",
+    "static/js/3.c04ec9da.chunk.js.map": "/disrupters/static/js/3.c04ec9da.chunk.js.map",
+    "index.html": "/disrupters/index.html",
+    "static/css/main.649a8792.chunk.css.map": "/disrupters/static/css/main.649a8792.chunk.css.map",
+    "static/js/2.d69b634b.chunk.js.LICENSE.txt": "/disrupters/static/js/2.d69b634b.chunk.js.LICENSE.txt",
+    "static/media/loadingcogs.bddee8d8.svg": "/disrupters/static/media/loadingcogs.bddee8d8.svg",
+    "static/media/rework.05ad9d02.PNG": "/disrupters/static/media/rework.05ad9d02.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.7403ed62.js",
+    "static/js/runtime-main.cc00b233.js",
     "static/js/2.d69b634b.chunk.js",
     "static/css/main.649a8792.chunk.css",
     "static/js/main.f009780b.chunk.js"
