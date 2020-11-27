@@ -45,7 +45,8 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    setMaxY(maxY => scroll.y > maxY ? scroll.y : maxY)
+    setMaxY(9999)
+    //setMaxY(maxY => scroll.y > maxY ? scroll.y : maxY)
     },[scroll.y])
 
   useEffect(() => {
@@ -105,7 +106,7 @@ useEffect(() => {
       })}
       {showAdminBoard && <Route path='/admin' component='' />}
       {showModeratorBoard && <Route path='/mod' component='' />}
-      <Redirect from='/' to='/aboutus' />
+      <Redirect from='/' to='/rework' />
       </Switch>
       </div>
       <Footer />

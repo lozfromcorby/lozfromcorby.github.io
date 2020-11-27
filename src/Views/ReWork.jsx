@@ -26,7 +26,7 @@ const ReWorks = () => {
           }}>
           <ReWorkEntry />
         </div>
-
+{/*
         <div
           style={{
             position: 'relative',
@@ -85,7 +85,7 @@ const ReWorks = () => {
             transition: 'all 0.66s cubic-bezier(0.685, 0.0473, 0.346, 1)'
           }}>
           Page 3 {flow}
-        </div>
+        </div> */}
 
 
       </div>

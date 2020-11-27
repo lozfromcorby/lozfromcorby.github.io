@@ -13,7 +13,7 @@ const isAdmin = currentUser === null ? false : currentUser.roles.includes('ROLE_
 const isMod = currentUser === null ? false : currentUser.roles.includes('ROLE_MODERATOR')
 
 const routes = [
-    {
+    /*{
       path: '/aboutus',
       name: 'About Us',
       component: AboutUs
@@ -22,10 +22,10 @@ const routes = [
       path: '/spaceexchange',
       name: 'Space Exchange',
       component: SpaceExchange
-    },
+    },*/
     {
       path: '/rework',
-      name: 'Re-Work',
+      name: 'Coming Soon',
       component: ReWork
     },
     /*{
@@ -42,12 +42,12 @@ const routes = [
       path: '/testingpage',
       name: 'Testing',
       component: Testing
-    },*/
+    },
     {
       path: '/account',
       name: currentUser === null ? 'Create Account' : isMod ? 'Moderator' : isAdmin ? 'Admin' : 'My Account',
       component: currentUser === null ? Register : MyAccount
-    },
+    },*/
   ]
 
   export default routes

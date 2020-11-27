@@ -86,12 +86,13 @@ const Footer = () => {
                     <h4>Subscribe to Updates</h4>
                     <div>
                         <input
+                            disabled
                             type="text"
                             placeholder="email"
                             onFocus={() => setEmailFocus(true)}
                             onBlur={() => setEmailFocus(false)}
                             style={{...styles.subscribeInput, border: emailFocus ? `1px solid ${secondaryColor}` : `1px solid ${dominantColor}`}} />
-                            <button style={styles.subscribeButton}>Subscribe</button>
+                            <button disabled style={styles.subscribeButton}>Subscribe</button>
                     </div>
                     <div style={{paddingTop: 10, fontSize: 12}}><input type="checkbox" /> I agree blah blah blah.</div>
                 </GridItem>

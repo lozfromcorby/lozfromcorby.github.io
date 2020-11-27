@@ -63,7 +63,7 @@ const ReWorks = () => {
                   fontWeight: 600,
                   cursor: 'pointer'
                 }}
-              >Create a Work Request</button>
+              ><strike>Create a Work Request</strike></button>
             </div>
 
             </div>
