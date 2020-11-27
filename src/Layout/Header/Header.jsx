@@ -43,7 +43,7 @@ const Header = () => {
             <div style={styles.header} >
             <GridItem>
             <div style={styles.logo} >
-                <span className="glitch" data-text="ダ disrupters.ltd">ダ Disrupters</span>
+                <span className="glitch" data-text="ダ disrupters.uk">ダ Disrupters</span>
             </div>
             </GridItem>
             <GridItem>
