@@ -106,7 +106,7 @@ export default function App() {
       })}
       {showAdminBoard && <Route path='/admin' component='' />}
       {showModeratorBoard && <Route path='/mod' component='' />}
-      <Redirect from='/' to='/rework' />
+      <Redirect from='/' to='/comingsoon' />
       </Switch>
       </div>
       <Footer />
