@@ -26,14 +26,14 @@ const routes = [
     {
       path: '/comingsoon',
       name: 'Coming Soon',
-      component: ReWork
+      component: () => {return(<div style={{height: 650, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontWeight: 700}}>Website Coming January 2021<br />Visit us on eBay and Amazon Marketplace until then :)</div>)}
     },
-    {
+    /*{
       path: '/rework',
       name: 'Rework',
       component: ReWork
     },
-    /*{
+    {
       path: '/newsblog',
       name: 'News & Blog',
       component: NewsBlog

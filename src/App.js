@@ -80,9 +80,9 @@ export default function App() {
     loadingcogs: loadingcogs
   }
 
-useEffect(() => {
-    tawkTo('5f8feef0f91e4b431ec6447e')
-}, [tawkTo])
+//useEffect(() => {
+//    tawkTo('5f8feef0f91e4b431ec6447e')
+//}, [tawkTo])
 
 
   return (

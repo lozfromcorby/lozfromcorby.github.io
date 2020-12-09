@@ -45,7 +45,7 @@ const Footer = () => {
     return(
         <> 
             <div style={styles.container}>
-                <GridItem>
+                {/*<GridItem>
                 <h4>Company</h4>
                     <Link title='About Disrupters' path='/' />
                     <Link title='Ethics' path='/' />
@@ -95,12 +95,12 @@ const Footer = () => {
                             <button disabled style={styles.subscribeButton}>Subscribe</button>
                     </div>
                     <div style={{paddingTop: 10, fontSize: 12}}><input type="checkbox" /> I agree blah blah blah.</div>
-                </GridItem>
+                </GridItem> */}
 
             </div>
             <div style={styles.copyrightContainer}>
                 <div style={styles.copyrightText}>
-                    Company registration no: 13036055 | VAT no. GB xxx xxxx xx. Copyright 2020. All Rights Reserved
+                    Company registration no: 13036055 | Copyright 2020. All Rights Reserved
                 </div>
             </div>
         </>

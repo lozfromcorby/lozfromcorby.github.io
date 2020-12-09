@@ -53,9 +53,9 @@ const Header = () => {
                 ))}
             </div>}
             </GridItem>
-            <GridItem>
+            {false && <GridItem>
             {screenSize.device === 'desktop' ? <ProfileButton /> : <><ProfileButton mobile /><MenuButton /></>}
-            </GridItem>
+            </GridItem>}
             </div>
         </div>
     )
