@@ -27,7 +27,7 @@ const Testing = () => {
           <h3>Basket</h3>
           <div style={{paddingBottom: 10}}>
             {basket.length === 0 ? 'Basket Empty' : basket.map((item,key) => (
-              <div>{item.name}: £{Number(item.unit_amount.value).toFixed(2)} <button onClick={() => removeFromBasket(item.name)}>x</button></div>
+              <div key={key + item.sku}>{item.name}: £{Number(item.unit_amount.value).toFixed(2)} <button onClick={() => removeFromBasket(item.name)}>x</button></div>
             ))}
           </div>
             {basket.length === 0 ? '' : <div style={{paddingBottom: 10, fontWeight: 600}}>Order Total: £{orderTotal.toFixed(2)}</div>}

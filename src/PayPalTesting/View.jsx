@@ -4,26 +4,40 @@ import GridContainer from '../Layout/Grid/GridContainer'
 import GridItem from '../Layout/Grid/GridItem'
 import {
   Stitch,
-  RemoteMongoClient
+  RemoteMongoClient,
+  AnonymousCredential
 } from "mongodb-stitch-browser-sdk";
 
 const Testing = () => {
   const {basket,setBasket,content,setContent} = useContext(AppContext)
 
   useEffect(() => {
+
+    const displayData = (db) => {
+      // query the remote DB and update the component state
+      db
+      .collection("stockfile")
+      .find({})
+      .asArray()
+      .then(res => { setContent(res); } )
+}
+
+    const displayDataOnLoad = (client,db) => {
+      // Anonymously log in and display comments on load
+      client.auth
+        .loginWithCredential(new AnonymousCredential())
+        .then(displayData(db))
+        .catch(console.error);
+    }
+
     let client = !Stitch.hasAppClient('rupt-udddb') ? Stitch.initializeDefaultAppClient('rupt-udddb') : Stitch.defaultAppClient
     let mongodb = client.getServiceClient(
       RemoteMongoClient.factory,
       "mongodb-atlas"
     );
     let db = mongodb.db('Rupt')
-    db
-    .collection("stockfile")
-    .find({})
-    .asArray()
-    .then(res => { setContent(res); } )
+    displayDataOnLoad(client,db)
   },[setContent])
-
 
   const addToBasket = (e) => {
     let item = {
@@ -39,8 +53,8 @@ const Testing = () => {
   return(
     <GridContainer>
 
-    {content.map(item => (
-      <GridItem desktopWidth={2}>
+    {content.map((item,key) => (
+      <GridItem key={key + item.sku} desktopWidth={2}>
         <h3> {item.description} </h3>
         <div style={{width: 200, height: 200, background: 'grey', borderRadius: 3}} />
           <h3>
