@@ -1,7 +1,6 @@
 import React, {useContext,useState} from 'react'
 import {NavLink} from "react-router-dom"
 import AppContext from '../../context'
-import ProfileButton from '../ProfileButton'
 import MenuButton from '../MenuButton'
 import styles, {secondaryColor} from '../stylesheet'
 import GridItem from '../Grid/GridItem'
@@ -22,22 +21,16 @@ const MenuItem = ({title='title',path='/'}) => {
 }
 
 const Header = () => {
-    const {maxY,scroll,screenSize,routes} = useContext(AppContext)
-    //const [hover,setHover] = useState(false)
-    const changeOpacity = (position) => {
-        return {...styles.sloganText,opacity: maxY > position ? 1 : 0 }
-      }
+    const {scroll,screenSize,routes,orderLines} = useContext(AppContext)
 
     return(
         <div
-            style={{...styles.headerContainer,opacity: 1 }}//scroll.direction === 'up' ? 1 : scroll.y < 10 ? 1 : hover ? 1 : 0.8}}
-            //onMouseEnter={() => setHover(true)}
-            //onMouseLeave={() => setHover(false)}
+            style={{...styles.headerContainer,opacity: 1 }}
         >
             {screenSize.device === 'desktop' &&
                 <div style={{...styles.menuContainer,top: scroll.direction === 'down' ? 0: 75}} >
-                    {routes.map(item => (
-                            <MenuItem key={item.path} title={item.name} path={item.path} />
+                    {routes.map(item => (  
+                            <MenuItem key={item.path} title={item.name === 'Basket' ? `Basket (${orderLines} items)` : item.name} path={item.path} />
                             ))}
                 </div>}
             <div style={styles.header} >
@@ -46,15 +39,8 @@ const Header = () => {
                 <span className="glitch" data-text="ダ disrupters.uk">ダ Disrupters</span>
             </div>
             </GridItem>
-            <GridItem>
-            {screenSize.device === 'desktop' &&  <div style={styles.slogan} >
-                {['Logistical ','Solutions. ','Digital ','World. '].map((item,key) => (
-                    <span key={item} style={changeOpacity(700+(500*key))} >{item}</span>
-                ))}
-            </div>}
-            </GridItem>
             {false && <GridItem>
-            {screenSize.device === 'desktop' ? <ProfileButton /> : <><ProfileButton mobile /><MenuButton /></>}
+            {screenSize.device !== 'desktop' && <MenuButton />}
             </GridItem>}
             </div>
         </div>

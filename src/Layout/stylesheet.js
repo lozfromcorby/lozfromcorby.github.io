@@ -77,7 +77,8 @@ const styles = {
     },
     slogan: {
         color: 'white',
-        textAlign: 'center',
+        textAlign: 'right',
+        paddingRight: 10,
         fontSize: 'calc(3px + 2vmin)',
         cursor: 'default',
         },

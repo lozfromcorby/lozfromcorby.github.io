@@ -45,7 +45,7 @@ const Footer = () => {
     return(
         <> 
             <div style={styles.container}>
-                {/*<GridItem>
+                <GridItem>
                 <h4>Company</h4>
                     <Link title='About Disrupters' path='/' />
                     <Link title='Ethics' path='/' />
@@ -63,7 +63,7 @@ const Footer = () => {
                     <Link title='Help Centre' path='/' />
                     <Link title='Security' path='/' />
                     <Link title='Server Status' path='/' />
-                    <Link title='Chat to Us!' path='/' />
+                    <Link title='Get In Touch!' path='/' />
                 </GridItem>
                 <GridItem>
                 <h4>More</h4>
@@ -95,7 +95,7 @@ const Footer = () => {
                             <button disabled style={styles.subscribeButton}>Subscribe</button>
                     </div>
                     <div style={{paddingTop: 10, fontSize: 12}}><input type="checkbox" /> I agree blah blah blah.</div>
-                </GridItem> */}
+                </GridItem>
 
             </div>
             <div style={styles.copyrightContainer}>

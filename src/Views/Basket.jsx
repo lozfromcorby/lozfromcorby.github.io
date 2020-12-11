@@ -1,10 +1,10 @@
 import React from "react";
-import View from '../PayPalTesting/View'
+import Basket from '../PayPalTesting/Basket'
 
 const Testing = () => {
 
   return(
-    <View />
+    <Basket />
   )
 }
 

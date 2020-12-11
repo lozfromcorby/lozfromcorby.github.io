@@ -11,38 +11,22 @@ import usePosition from './Hooks/usePosition'
 import useOnClickOutside from './Hooks/useOnClickOutside'
 import Header from './Layout/Header/Header'
 import Footer from './Layout/Footer/Footer'
-import AuthService from './services/auth.service'
 import functions from './Hooks/functions'
-import loadingcogs from './loadingcogs.svg'
-import UserService from './services/user.service'
 
 export default function App() {
-  const {nameFormat,logOut,getDistance,getBearing,tawkTo} = functions
+  const {nameFormat,logOut,getDistance,getBearing} = functions
   let scroll = useScroll()
   let screenSize = useScreenSize()
   let browserLocation = usePosition()
   const history = useHistory()
   const [menuOpen,isMenuOpen] = useState(false)
-  const [profileOpen,isProfileOpen] = useState(false)
-  const [showModeratorBoard, setShowModeratorBoard] = useState(false)
-  const [showAdminBoard, setShowAdminBoard] = useState(false)
-  const [currentUser, setCurrentUser] = useState(null)
   const [maxY,setMaxY] = useState(0)
   
-  useEffect(() => {
-    UserService.checkApiConnection().then((result) => {
-      console.log(result.status === 200 ? 'api ok' : 'could not connent to api')
-    })
-  },[])
+  const [basket,setBasket] = useState(localStorage.basket === undefined ? [] : JSON.parse(localStorage.basket))
+  const [content,setContent] = useState([])
 
-  useEffect(() => {
-    const user = AuthService.getCurrentUser()
-    if (user) {
-      setCurrentUser(user)
-      setShowModeratorBoard(user.roles.includes('ROLE_MODERATOR'))
-      setShowAdminBoard(user.roles.includes('ROLE_ADMIN'))
-    }
-  }, [])
+  let orderTotal = basket.reduce((acc, item) => acc + Number(item.unit_amount.value), 0)
+  let orderLines = basket.reduce((acc, item) => acc + 1, 0)
 
   useEffect(() => {
     setMaxY(9999)
@@ -59,6 +43,12 @@ export default function App() {
 
 
   const appContext = {
+    orderTotal: orderTotal,
+    orderLines: orderLines,
+    setBasket: setBasket,
+    setContent: setContent,
+    basket: basket,
+    content: content,
     scroll: scroll,
     screenSize: screenSize,
     useOnClickOutside: useOnClickOutside,
@@ -66,24 +56,13 @@ export default function App() {
     routes: routes,
     menuOpen: menuOpen,
     isMenuOpen: isMenuOpen,
-    currentUser: currentUser,
     nameFormat: nameFormat,
     logOut: logOut,
-    isProfileOpen: isProfileOpen,
-    profileOpen: profileOpen,
     history: history,
     browserLocation: browserLocation,
     getDistance: getDistance,
-    getBearing: getBearing,
-    showAdminBoard: showAdminBoard,
-    showModeratorBoard: showModeratorBoard,
-    loadingcogs: loadingcogs
+    getBearing: getBearing
   }
-
-//useEffect(() => {
-//    tawkTo('5f8feef0f91e4b431ec6447e')
-//}, [tawkTo])
-
 
   return (
     <AppContext.Provider value={appContext}>
@@ -104,8 +83,6 @@ export default function App() {
               />
             )
       })}
-      {showAdminBoard && <Route path='/admin' component='' />}
-      {showModeratorBoard && <Route path='/mod' component='' />}
       <Redirect from='/' to='/comingsoon' />
       </Switch>
       </div>

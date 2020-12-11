@@ -1,5 +1,3 @@
-import AuthService from '../services/auth.service'
-
 const nameFormat = (val = '') => {
     return val.toLowerCase().split(" ").map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(" ")
   }
@@ -50,13 +48,6 @@ const getBearing = (startLat, startLng, destLat, destLng) => {
   return (brng + 360) % 360;
 }
 
-const logOut = () => {
-  AuthService.logout()
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-  window.location.reload()
-}
-
 const tawkTo = (propertyId) => {
   if (!window) {
     throw new Error('DOM is unavailable')
@@ -93,7 +84,6 @@ const obj = {
   toDegrees,
   getBearing,
   getDistance,
-  logOut,
   tawkTo
 }
 
