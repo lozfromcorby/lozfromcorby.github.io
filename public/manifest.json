@@ -1,6 +1,6 @@
 {
-  "short_name": "Disrupters - Rupt.UK",
-  "name": "Disrupters",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
